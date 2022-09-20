@@ -44,7 +44,7 @@ def index():
         age = data["age"]
         email = data["email"]
 
-        new_data = User(name, email, address, age)
+        new_data = User(name=name, address=address, ege=age, email=email)
         db.session.add(new_data)
         db.session.commit()
 
