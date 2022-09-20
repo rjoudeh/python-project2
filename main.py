@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     # Defines the Table Name user
-    __tablename__ = "user"
+    __tablename__ = "app_user"
 
     # Makes three columns into the table id, name, email
     _id = db.Column(db.Integer, primary_key=True, autoincrement=True)
