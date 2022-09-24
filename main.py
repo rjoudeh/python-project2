@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def index():
-    return "hi!"
+    return "Hello there, use /users endpoint"
 
 
 @app.route("/users", methods=['GET'])
