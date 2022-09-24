@@ -1,7 +1,6 @@
 import os
 
 from flask import Flask, request, jsonify
-from flask_api_cache import ApiCache
 from sqlalchemy import and_
 
 from db import get_db_session
@@ -16,7 +15,6 @@ def index():
 
 
 @app.route("/users", methods=['GET'])
-@ApiCache(expired_time=50)
 def users():
     args = request.args
     max_per_page = 50
@@ -41,9 +39,7 @@ def users():
     if len(queries) > 0:
         query = query.filter(and_(*queries))
 
-    response = jsonify(query.offset((page - 1) * per_page).limit(per_page).all())
-    response.cache_control.max_age = 500
-    return response
+    return jsonify(query.offset((page - 1) * per_page).limit(per_page).all())
 
 
 if __name__ == '__main__':
