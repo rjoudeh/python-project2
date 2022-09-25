@@ -28,3 +28,9 @@ https://rjoudeh-python.herokuapp.com/users?age=22
 https://rjoudeh-python.herokuapp.com/users?age=22&name=Ma
 
 https://rjoudeh-python.herokuapp.com/users?page=2&per_page=50
+
+
+## Project structure
+#### `main.py` has the flask app creation and the application endpoints.
+#### `user.py` has the User Model mapping of the `app_user` db table.
+#### `db.py` has the db engine creation and function to get the db session.
